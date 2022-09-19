@@ -57,7 +57,7 @@ export function usePhotoGallery() {
           for (let photo of photosInPreferences) {
             const file = await Filesystem.readFile({
               path: photo.filepath,
-              directory: Directory.Data,
+              directory: Directory.Data
             });
             // Web platform only: Load the photo as base64 data
             photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
@@ -72,7 +72,7 @@ export function usePhotoGallery() {
       const photo = await Camera.getPhoto({
         resultType: CameraResultType.Uri,
         source: CameraSource.Camera,
-        quality: 100,
+        quality: 100
       });
       
       const fileName = new Date().getTime() + '.jpeg';
@@ -84,7 +84,7 @@ export function usePhotoGallery() {
   
     return {
       photos,
-      takePhoto,
+      takePhoto
     };
   }
 
